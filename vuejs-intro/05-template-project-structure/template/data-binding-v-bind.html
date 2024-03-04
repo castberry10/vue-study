@@ -15,6 +15,7 @@
         <p>{{message}}</p>
         <p>{{message + "!!"}}</p>
         <p>{{message.split('').reverse().join('')}}</p>
+        <p>{{reversedMessage}}</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -27,6 +28,11 @@
                 classA:'container',
                 styleA:'color:blue',
                 message:'콧수염괄호'
+            },
+            computed:{
+                reversedMessage: function(){
+                    return this.message.split('').reverse().join('')
+                }
             }
         })
     </script>
