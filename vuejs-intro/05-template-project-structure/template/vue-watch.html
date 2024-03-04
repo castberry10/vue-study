@@ -2,12 +2,12 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>Vue event</title>
+    <title>Vue watch</title>
 </head>
 
 <body>
     <div id="app">
-        <button v-on:click="clickBtn">버튼</button>
+        {{reversedMessage}}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
@@ -15,12 +15,15 @@
     <script>
         new Vue({
             el:'#app',
-            methods: {
-                clickBtn: function(e){
-                    console.log(e)
+            data:{
+                message: 'Hello World'
+            },
+            computed:{
+                reversedMessage: function(){
+                    return this.message.split('').reverse().join('');
                 }
             }
-        });
+        })
     </script>
 
 </body>
